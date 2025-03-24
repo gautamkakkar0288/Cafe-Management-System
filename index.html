@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="AROMA"> 
+            <span><img src="cafe_logo.png" alt="cafe Aroma" id="cafe_logo"></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#order-management">Order Management</a></li>
+                <li><a href="#inventory-management">Inventory Management</a></li>
+                <li><a href="#bill-generator">Bill Generator</a></li>
+                <li><a href="#customer-feedback">Customer Feedback</a></li>
+                <li><a href="#reporting">Reporting</a></li>
+                <li><a href="login.html" id="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="order-management">
+                <h2>Order Management</h2>
+                <form id="order-form">
+                    <label for="order-item">Item:</label>
+                    <input type="text" id="order-item" required>
+                    
+                    <label for="order-quantity">Quantity:</label>
+                    <input type="number" id="order-quantity" required>
+                    
+                    <button type="submit">Place Order</button>
+                </form>
+                <div id="order-message"></div>
+                <div id="order-list-title"><h3>Ordered Items</h3></div>
+                <div id="order-list"></div>
+            </section>
+
+            <section id="inventory-management">
+                <h2>Inventory Management</h2>
+                <form id="inventory-form">
+                    <label for="inventory-item">Item:</label>
+                    <input type="text" id="inventory-item" required>
+                    
+                    <label for="inventory-quantity">Quantity:</label>
+                    <input type="number" id="inventory-quantity" required>
+                    
+                    <label for="inventory-cost">Cost per Item:</label>
+                    <input type="number" id="inventory-cost" required>
+                    
+                    <button type="submit">Add to Inventory</button>
+                </form>
+                <div id="inventory-message"></div>
+                <div id="inventory-list-title"><h3>Inventory List</h3></div>
+                <div id="inventory-list"></div>
+            </section>
+
+            <section id="bill-generator">
+                <h2>Bill Generator</h2>
+                <div id="bill-list-title"><h3>Bill Summary</h3></div>
+                <div id="bill-list"></div>
+                <div id="total-bill">Total Bill: ₹0.00</div>
+                <button id="generate-bill">Generate Bill</button>
+            </section>
+
+            <section id="customer-feedback">
+                <h2>Customer Feedback</h2>
+                <form id="feedback-form">
+                    <label for="customer-name">Name:</label>
+                    <input type="text" id="customer-name" required>
+                    <label for="customer-email">Email Address:</label>
+                    <input type="email" id="customer-email" required>
+                    <label for="customer-phone">Contact Number:</label>
+                    <input type="tel" id="customer-phone" required>
+                    <label for="feedback-comment">Feedback:</label>
+                    <textarea id="feedback-comment" required></textarea>
+                    
+                    <button type="submit">Submit Feedback</button>
+                </form>
+                <div id="feedback-list"></div>
+            </section>
+
+            <section id="sales-summary">
+                <h2>Sales Summary</h2>
+                <label for="sales-timeframe">Select Timeframe:</label>
+                <select id="sales-timeframe">
+                    <option value="day">Today</option>
+                    <option value="week">This Week</option>
+                    <option value="month">This Month</option>
+                </select>
+                <div id="sales-summary-data"></div>
+            </section>
+            <!-- Worker Attendance Section -->
+        <!-- <section id="attendance-section">
+            <h2>Worker Attendance</h2>
+            <form id="attendance-form">
+                <label for="worker-id">ID:</label>
+                <input type="text" id="worker-id" required>
+                <br>
+                <select id="attendance-status">
+                    <option value="present">Present</option>
+                    <option value="absent">Absent</option>
+                </select>
+                <button type="submit">Submit Attendance</button>
+            </form>
+            <div id="attendance-list"></div>
+        </section>
+        </div> -->
+
+        <!-- Worker Attendance Section -->
+<section id="attendance-section">
+    <h2>Worker Attendance</h2>
+    <form id="attendance-form">
+        <label for="worker-id">ID:</label>
+        <input type="text" id="worker-id" required>
+        <br>
+        <label for="attendance-status">Status:</label>
+        <select id="attendance-status" required>
+            <option value="present">Present</option>
+            <option value="absent">Absent</option>
+        </select>
+        <br>
+        <button type="submit">Submit Attendance</button>
+    </form>
+
+    <div id="attendance-list"></div>
+</section>
+
+
+        <aside class="output"></aside>
+    </main>
+
+    <footer>
+        <section id="reporting">
+            <h2>Reporting</h2>
+            <button id="generate-report">Generate Report</button>
+            <div id="report-output"></div>
+        </section>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
